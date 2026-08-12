@@ -1,0 +1,4 @@
+packet_rate,byte_entropy,protocol_tcp_ratio,dns_query_freq,unique_dest_ips,avg_connection_duration,port_entropy,bandwidth_mbps,new_ext_conns,tcp_flag_anomaly
+120.1,4.30,0.86,5.0,3,2.52,1.10,2.4,0,0.02
+118.5,4.25,0.87,5.2,3,2.48,1.12,2.3,0,0.01
+122.3,4.33,0.85,4.8,4,2.55,1.09,2.5,0,0.02

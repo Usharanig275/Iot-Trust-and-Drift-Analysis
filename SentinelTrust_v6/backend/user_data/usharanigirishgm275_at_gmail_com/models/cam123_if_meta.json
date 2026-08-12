@@ -1,0 +1,1 @@
+{"trained": true, "n_samples": 100, "trained_at": 1785839925.446984, "reliability": "high", "score_lo": -0.5934827106623038, "score_hi": -0.4417823729332898, "n_estimators": 200, "contamination": 0.01}

@@ -1,0 +1,64 @@
+{
+  "notifications": [
+    {
+      "id": "notif-1785839998376",
+      "to_email": "usharanigirishgm275@gmail.com",
+      "to_name": "usha",
+      "device_id": "cam123",
+      "score": 28.3,
+      "level": "critical",
+      "explanation": "ANOMALY: High behavioral drift (drift=1.00) [IF=1.00]. Device significantly off baseline.",
+      "risk_factors": [
+        "packet_rate: 1479.00 vs baseline 544.39 (z=5.0\u03c3)",
+        "byte_entropy: 3.20 vs baseline 7.03 (z=5.0\u03c3)",
+        "protocol_tcp_ratio: 0.38 vs baseline 0.95 (z=5.0\u03c3)",
+        "Isolation Forest: reading flagged anomalous (score=1.00)"
+      ],
+      "attack_type": null,
+      "suspicious_ips": [],
+      "device_ip": "192.168.1.50",
+      "sent_at": 1785839998.3768563,
+      "email_sent": false
+    },
+    {
+      "id": "notif-1785840019336",
+      "to_email": "usharanigirishgm275@gmail.com",
+      "to_name": "usha",
+      "device_id": "cam123",
+      "score": 28.3,
+      "level": "critical",
+      "explanation": "ANOMALY: High behavioral drift (drift=1.00) [IF=1.00]. Device significantly off baseline.",
+      "risk_factors": [
+        "packet_rate: 1479.00 vs baseline 544.39 (z=5.0\u03c3)",
+        "byte_entropy: 3.20 vs baseline 7.03 (z=5.0\u03c3)",
+        "protocol_tcp_ratio: 0.38 vs baseline 0.95 (z=5.0\u03c3)",
+        "Isolation Forest: reading flagged anomalous (score=1.00)"
+      ],
+      "attack_type": null,
+      "suspicious_ips": "",
+      "device_ip": "192.168.1.50",
+      "sent_at": 1785840019.3365629,
+      "email_sent": false
+    },
+    {
+      "id": "notif-1785840183009",
+      "to_email": "usharanigirishgm275@gmail.com",
+      "to_name": "usha",
+      "device_id": "cam123",
+      "score": 28.3,
+      "level": "critical",
+      "explanation": "ANOMALY: High behavioral drift (drift=1.00) [IF=1.00]. Device significantly off baseline.",
+      "risk_factors": [
+        "packet_rate: 1479.00 vs baseline 544.39 (z=5.0\u03c3)",
+        "byte_entropy: 3.20 vs baseline 7.03 (z=5.0\u03c3)",
+        "protocol_tcp_ratio: 0.38 vs baseline 0.95 (z=5.0\u03c3)",
+        "Isolation Forest: reading flagged anomalous (score=1.00)"
+      ],
+      "attack_type": null,
+      "suspicious_ips": [],
+      "device_ip": "192.168.1.50",
+      "sent_at": 1785840183.0094538,
+      "email_sent": false
+    }
+  ]
+}

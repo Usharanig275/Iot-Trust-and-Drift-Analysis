@@ -1,0 +1,79 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sentineltrust-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - POSTGRES_URL=postgresql://sentinel:sentinel@postgres:5432/sentineldb
+      - KAFKA_BOOTSTRAP=kafka:9092
+    depends_on:
+      - redis
+      - postgres
+    volumes:
+      - ./ml/models:/app/models
+      - ./config:/app/config
+    networks:
+      - sentinel-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sentineltrust-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+      - REACT_APP_WS_URL=ws://localhost:8000/ws
+    depends_on:
+      - backend
+    networks:
+      - sentinel-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: sentineltrust-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - sentinel-net
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: sentineltrust-postgres
+    environment:
+      POSTGRES_USER: sentinel
+      POSTGRES_PASSWORD: sentinel
+      POSTGRES_DB: sentineldb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - sentinel-net
+
+  simulator:
+    build:
+      context: ./simulator
+      dockerfile: Dockerfile
+    container_name: sentineltrust-simulator
+    environment:
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - sentinel-net
+
+volumes:
+  pgdata:
+
+networks:
+  sentinel-net:
+    driver: bridge
